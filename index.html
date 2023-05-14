@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Age calculator app</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,700;1,800&display=swap" rel="stylesheet">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+</head>
+
+<body>
+  <header>
+    <form>
+      <div class="container mt-5">
+        <div class="pt-5 d-flex justify-content-center">
+          <div class="px-2">
+            <label class="label" for="day">DAY</label>
+            <input type="text" class="form-control" id="day" name="day" placeholder="DD">
+            <p class="error-message-day">Must be a valid day</p>
+          </div>
+          <div class="px-2">
+            <label class="label" for="month">MONTH</label>
+            <input type="text" class="form-control" id="month" name="month" placeholder="MM">
+            <p class="error-message-month">Must be a valid month</p>
+          </div>
+          <div class="px-2">
+            <label class="label" for="year">YEAR</label>
+            <input type="text" class="form-control" id="year" name="year" placeholder="YYYY">
+            <p class="error-message-year">Must be a valid year</p>
+          </div>
+  
+        </div>
+  <div class="pt-5">
+    <button type="button" id="calculateBtn" onclick="calculateAge()">Calculate Age</button>
+    <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+    
+  </div>
+   
+      
+
+  
+  
+        <div class="pt-5">
+          <div class="d-flex justify-content-center">
+            <ul>
+              <li>
+                <h1><span class="span years">- -</span> years</h1>
+              </li>
+              <li>
+                <h1><span class="span months">- -</span> months</h1>
+              </li>
+              <li>
+                <h1><span class="span days">- -</span> days</h1>
+              </li>
+            </ul>
+  
+          </div>
+  
+        </div>
+      </div>
+
+    </form>
+  </header>
+
+
+
+
+
+  <main>
+    <!-- The main content of the page goes here -->
+  </main>
+
+  <footer>
+    <!-- The footer of the page goes here -->
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Kit Ocampo</a>.
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
