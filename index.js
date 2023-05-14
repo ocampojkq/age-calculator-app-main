@@ -1,85 +1,39 @@
 function calculateAge() {
-  var inputDay = document.getElementById("day").value;
-  var inputMonth = document.getElementById("month").value;
-  var inputYear = document.getElementById("year").value;
+  // Get the user's input values for day, month, and year
+  const day = document.getElementById("day").value;
+  const month = document.getElementById("month").value;
+  const year = document.getElementById("year").value;
 
-  var isValidDay = isValidDate(inputYear, inputMonth, inputDay);
-
-  if (!isValidDay) {
-    // Show error message for day input
-    document.querySelector(".error-message-day").style.display = "block";
-    document.querySelector(".days").innerHTML = "";
-  } else {
-    // Hide error message for day input
-    document.querySelector(".error-message-day").style.display = "none";
-    document.querySelector(".days").innerHTML =
-      getDaysBetweenDates(
-        new Date(inputYear, inputMonth - 1, inputDay),
-        new Date()
-      ) + " days";
-  }
-
-  var isValidMonth = isValidMonth(inputYear, inputMonth);
-
-  if (!isValidMonth) {
-    // Show error message for month input
-    document.querySelector(".error-message-month").style.display = "block";
-    document.querySelector(".months").innerHTML = "";
-  } else {
-    // Hide error message for month input
-    document.querySelector(".error-message-month").style.display = "none";
-    document.querySelector(".months").innerHTML =
-      getMonthsBetweenDates(
-        new Date(inputYear, inputMonth - 1, inputDay),
-        new Date()
-      ) + " months";
-  }
-
-  var isValidYear = isValidYear(inputYear);
-
-  if (!isValidYear) {
-    // Show error message for year input
-    document.querySelector(".error-message-year").style.display = "block";
-    document.querySelector(".years").innerHTML = "";
-  } else {
-    // Hide error message for year input
-    document.querySelector(".error-message-year").style.display = "none";
-    document.querySelector(".years").innerHTML =
-      getYearsBetweenDates(
-        new Date(inputYear, inputMonth - 1, inputDay),
-        new Date()
-      ) + " years";
-  }
-}
-
-function isValidDate(year, month, day) {
+  // Check if the input values are valid
   if (isNaN(day) || day < 1 || day > 31) {
-    return false;
+    document.querySelector(".days").innerHTML = "Must be a valid day";
+    return;
   }
 
   if (isNaN(month) || month < 1 || month > 12) {
-    return false;
+    document.querySelector(".months").innerHTML = "Must be a valid month";
+    return;
   }
 
   if (isNaN(year) || year < 1900 || year > new Date().getFullYear()) {
-    return false;
+    document.querySelector(".years").innerHTML = "Must be a valid year";
+    return;
   }
 
-  return true;
-}
+  // Get the current date
+  const currentDate = new Date();
 
-function isValidMonth(year, month) {
-  if (isNaN(month) || month < 1 || month > 12) {
-    return false;
-  }
+  // Calculate the user's birth date from the input values
+  const birthDate = new Date(`${year}-${month}-${day}`);
 
-  return true;
-}
+  // Calculate the user's age
+  const ageInMilliseconds = currentDate - birthDate;
+  const ageInYears = ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
+  const ageInMonths = ageInYears * 12;
+  const ageInDays = ageInMilliseconds / (1000 * 60 * 60 * 24);
 
-function isValidYear(year) {
-  if (isNaN(year) || year < 1900 || year > new Date().getFullYear()) {
-    return false;
-  }
-
-  return true;
+  // Display the calculated age in the UI
+  document.querySelector(".years").innerHTML = Math.floor(ageInYears);
+  document.querySelector(".months").innerHTML = Math.floor(ageInMonths);
+  document.querySelector(".days").innerHTML = Math.floor(ageInDays);
 }
