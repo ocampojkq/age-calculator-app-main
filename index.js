@@ -1,71 +1,64 @@
-function calculateAge() {
-  // Get user input
-  const dayInput = document.getElementById("day").value;
-  const monthInput = document.getElementById("month").value;
-  const yearInput = document.getElementById("year").value;
+function answer(event) {
+  event.preventDefault();
 
-  // Validate user input
-  const validDay = validateDay(dayInput);
-  const validMonth = validateMonth(monthInput);
-  const validYear = validateYear(yearInput);
-  if (!validDay || !validMonth || !validYear) {
+  const day = document.getElementById("day").value;
+  const month = document.getElementById("month").value;
+  const year = document.getElementById("year").value;
+
+  if (day < 1 || day > 31 || isNaN(day)) {
+    document.getElementById("day").style.borderColor = "red";
+    document.querySelector("#day + p").style.color = "red";
+    document.querySelector("#day + p").textContent = "Invalid day";
     return;
+  } else {
+    document.getElementById("day").style.borderColor = "";
+    document.querySelector("#day + p").style.color = "";
+    document.querySelector("#day + p").textContent = "Must be valid day";
   }
 
-  // Calculate age
-  const birthday = new Date(`${yearInput}-${monthInput}-${dayInput}`);
+  if (month < 1 || month > 12 || isNaN(month)) {
+    document.getElementById("month").style.borderColor = "red";
+    document.querySelector("#month + p").style.color = "red";
+    document.querySelector("#month + p").textContent = "Invalid month";
+    return;
+  } else {
+    document.getElementById("month").style.borderColor = "";
+    document.querySelector("#month + p").style.color = "";
+    document.querySelector("#month + p").textContent = "Must be valid month";
+  }
+
+  if (year < 1 || year > new Date().getFullYear() || isNaN(year)) {
+    document.getElementById("year").style.borderColor = "red";
+    document.querySelector("#year + p").style.color = "red";
+    document.querySelector("#year + p").textContent = "Invalid year";
+    return;
+  } else {
+    document.getElementById("year").style.borderColor = "";
+    document.querySelector("#year + p").style.color = "";
+    document.querySelector("#year + p").textContent = "Must be valid year";
+  }
+
   const today = new Date();
-  const ageInMilliseconds = today - birthday;
-  const ageInYears = Math.floor(ageInMilliseconds / 31556952000); // 31556952000 milliseconds in a year
-  const ageInMonths = Math.floor(
-    (ageInMilliseconds % 31556952000) / 2629746000
-  ); // 2629746000 milliseconds in a month
-  const ageInDays = Math.floor((ageInMilliseconds % 2629746000) / 86400000); // 86400000 milliseconds in a day
+  const birthdate = new Date(year, month - 1, day);
+  let ageYears = today.getFullYear() - birthdate.getFullYear();
+  let ageMonths = today.getMonth() - birthdate.getMonth();
+  let ageDays = today.getDate() - birthdate.getDate();
 
-  // Display age
-  document.querySelector(".span.years").textContent = ageInYears;
-  document.querySelector(".span.months").textContent = ageInMonths;
-  document.querySelector(".span.days").textContent = ageInDays;
+  if (ageDays < 0) {
+    ageMonths--;
+    ageDays += daysInMonth(birthdate.getMonth() + 1, birthdate.getFullYear());
+  }
+
+  if (ageMonths < 0) {
+    ageYears--;
+    ageMonths += 12;
+  }
+
+  document.getElementById("YY").textContent = ageYears;
+  document.getElementById("MM").textContent = ageMonths;
+  document.getElementById("DD").textContent = ageDays;
 }
 
-function validateDay(day) {
-  const dayInt = parseInt(day);
-  if (isNaN(dayInt) || dayInt < 1 || dayInt > 31) {
-    document
-      .querySelectorAll(".error-message-day")
-      .forEach((element) => (element.style.display = "block"));
-    return false;
-  }
-  document
-    .querySelectorAll(".error-message-day")
-    .forEach((element) => (element.style.display = "none"));
-  return true;
-}
-
-function validateMonth(month) {
-  const monthInt = parseInt(month);
-  if (isNaN(monthInt) || monthInt < 1 || monthInt > 12) {
-    document
-      .querySelectorAll(".error-message-month")
-      .forEach((element) => (element.style.display = "block"));
-    return false;
-  }
-  document
-    .querySelectorAll(".error-message-month")
-    .forEach((element) => (element.style.display = "none"));
-  return true;
-}
-
-function validateYear(year) {
-  const yearInt = parseInt(year);
-  if (isNaN(yearInt) || yearInt < 1900 || yearInt > new Date().getFullYear()) {
-    document
-      .querySelectorAll(".error-message-year")
-      .forEach((element) => (element.style.display = "block"));
-    return false;
-  }
-  document
-    .querySelectorAll(".error-message-year")
-    .forEach((element) => (element.style.display = "none"));
-  return true;
+function daysInMonth(month, year) {
+  return new Date(year, month, 0).getDate();
 }

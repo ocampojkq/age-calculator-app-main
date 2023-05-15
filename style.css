@@ -3,75 +3,163 @@
 
 
 
-body{
-    background-color: #f0f0f0;
-
-}
-.container {
-   
-  
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 200px;
-    background-color: #ffffff;
- 
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-
-
-.form-control{
-    font-size: 32px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 140px;
-  font-weight: bolder;
-  color: #898989;
+.main-div .container .submit {
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 1rem;
+    background-color: rgb(133, 77, 255);
+    border: none;
+    outline: none;
+    transition: 0.4s;
 }
 
-li{
-    list-style-type: none;
-   
-}
-
-h1{
-    font-size: 70px;
-    font-weight: 800;
-    font-family: 'Poppins', sans-serif;
-    color: #151515;
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0deg, 0%, 94%);
 }
 
 
-.span{
-    color: hsl(259, 100%, 65%);
+
+.main-div {
+  background-color: #fff;
+  width: 600px;
+  border-radius: 20px 20px 180px 20px;
 }
+.main-div .container {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+}
+.main-div .container .form-container {
+  display: flex;
+  gap: 36px;
+}
+.main-div .container .form-container .input {
+  display: flex;
+  flex-direction: column;
+}
+.main-div .container .form-container .input label {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.main-div .container .form-container .input input {
+  width: 100px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(0deg, 0%, 86%);
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.main-div .container .form-container .input input:focus {
+  border-color: rgb(133, 77, 255) !important;
+}
+.main-div .container .form-container .input input::-moz-placeholder {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.main-div .container .form-container .input input:-ms-input-placeholder {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.main-div .container .form-container .input input::placeholder {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.main-div .container .submit- {
+  display: flex;
+  align-items: center;
+}
+.main-div .container hr {
+  width: 100%;
+}
+.main-div .container .submit {
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 1rem;
+  background-color: rgb(133, 77, 255);
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+.main-div .container .submit:hover {
+  background-color: hsl(0deg, 0%, 8%);
+}
+.main-div .container .answer h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  font-style: italic;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.main-div .container .answer h1 span {
+  color: rgb(133, 77, 255);
+}
+.main-div .container small {
+  color: hsl(0deg, 100%, 67%);
+}
+.main-div .container .attribution {
+  font-size: 11px;
+  text-align: center;
+  color: hsl(0deg, 0%, 8%);
+}
+.main-div .container .attribution a {
+  color: rgb(133, 77, 255);
+}
+
 
 
 p{
-    font-size: 8px;
-    font-family: 'Poppins', sans-serif;
-    color: red;
-    display: none;
-
+  font-size: 8px;
+  color: white
 }
-label.invalid {
-    display: none;
+
+label{
+  color: rgb(126, 123, 123);
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+@media screen and (max-width: 992px) {
+  .main-div {
+    width: 350px;
   }
-  
-
-
-.rounded-circle{
-    border: none;
+  .main-div .container {
+    padding: 1rem;
+  }
+  .main-div .container .form-container {
+    margin-bottom: 5rem;
+    gap: 0;
+    justify-content: space-between;
+  }
+  .main-div .container .submit- {
+    position: relative;
+  }
+  .main-div .container .submit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .main-div .container .answer {
+    margin-top: 3.5rem;
+  }
+  .main-div .container .answer h1 {
+    font-size: 3.5rem;
+  }
 }
-
-.label{
-    font-weight: bold;
-    color: #898989;
-}
-
-.justify-content-start{
-margin-left: 10%;
-}
-
 
