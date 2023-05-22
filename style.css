@@ -164,6 +164,24 @@ label{
 }
 
 
-.proud-of-this-css {
-  color: papayawhip;
+/* rain drops */
+
+
+.raindrop {
+  position: fixed;
+  top: -20px;
+  left: 0;
+  width: 3px;
+  height: 3px;
+}
+
+
+
+@keyframes raindropFall {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
 }
