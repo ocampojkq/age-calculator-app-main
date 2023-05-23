@@ -1,7 +1,7 @@
 function answer(event) {
   event.preventDefault();
 
-  var userInputDay = document.getElementById("day").value; // Get the user input day
+  var userInputDay = document.getElementById("day").value; //  Get the user input day
   var userInputMonth = document.getElementById("month").value; // Get the user input month
   var userInputYear = document.getElementById("year").value; // Get the user input year
 
