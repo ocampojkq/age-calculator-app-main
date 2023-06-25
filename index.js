@@ -15,7 +15,7 @@ function answer(event) {
     userInputMonth === targetMonth.toString() &&
     userInputYear === targetYear.toString()
   ) {
-    document.getElementById("carmelo").style.display = "block"; // Display the hidden element
+    document.getElementById("carmelo").style.display = "block";  // Display the hidden element
   } else {
     document.getElementById("carmelo").style.display = "none"; // Hide the element if the input doesn't match
   }
