@@ -17,7 +17,7 @@ function answer(event) {
   ) {
     document.getElementById("carmelo").style.display = "block";  // Display the hidden element
   } else {
-    document.getElementById("carmelo").style.display = "none"; // Hide the element if the input doesn't match
+    document.getElementById("carmelo").style.display = "none";  // Hide the element if the input doesn't match
   }
 
   var userInputDay1 = document.getElementById("day").value; // Get the user input day
