@@ -6,7 +6,7 @@ function answer(event) {
   var userInputYear = document.getElementById("year").value; // Get the user input year
 
   var targetDay = 12;  // The target day
-  var targetMonth = 11; // The target month
+  var targetMonth = 11;  // The target month
   var targetYear = 2014; // The target year
 
   // Check if the user input matches the target date
