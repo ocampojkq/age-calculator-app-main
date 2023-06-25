@@ -22,7 +22,7 @@ function answer(event) {
 
   var userInputDay1 = document.getElementById("day").value;  // Get the user input day
   var userInputMonth1 = document.getElementById("month").value;  // Get the user input month
-  var userInputYear1 = document.getElementById("year").value; // Get the user input year
+  var userInputYear1 = document.getElementById("year").value;  // Get the user input year
 
   var targetDay1 = 22; // The target day
   var targetMonth1 = 03; // The target month
