@@ -9,7 +9,7 @@ function answer(event) {
   var targetMonth = 11;  // The target month
   var targetYear = 2014;  // The target year
 
-  // Check if the user input matches the target date
+   // Check if the user input matches the target date
   if (
     userInputDay === targetDay.toString() &&
     userInputMonth === targetMonth.toString() &&
