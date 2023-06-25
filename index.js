@@ -20,7 +20,7 @@ function answer(event) {
     document.getElementById("carmelo").style.display = "none";  // Hide the element if the input doesn't match
   }
 
-  var userInputDay1 = document.getElementById("day").value; // Get the user input day
+  var userInputDay1 = document.getElementById("day").value;  // Get the user input day
   var userInputMonth1 = document.getElementById("month").value; // Get the user input month
   var userInputYear1 = document.getElementById("year").value; // Get the user input year
 
