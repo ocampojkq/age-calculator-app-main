@@ -7,7 +7,7 @@ function answer(event) {
 
   var targetDay = 12;  // The target day
   var targetMonth = 11;  // The target month
-  var targetYear = 2014; // The target year
+  var targetYear = 2014;  // The target year
 
   // Check if the user input matches the target date
   if (
